@@ -24,7 +24,7 @@ RUN sleep 91                 \
  && src/configure            \
  && make -C src              \
  && mkdir /home/lfs/.pyenv   \
- && tar cf - --exclude-vcs . \
+ && tar cf -               . \
  |  tar xf - --owner=lfs     \
       -C /home/lfs/.pyenv    \
  && chown -R lfs:lfs         \
