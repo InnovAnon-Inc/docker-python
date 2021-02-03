@@ -8,6 +8,7 @@ RUN sleep 91                 \
       python3-pip            \
       python3-setuptools     \
       python3-wheel          \
+      zlib1g-dev             \
  && python3 -m pip install   \
       --upgrade pip          \
  && python3 -m pip install   \
@@ -22,9 +23,7 @@ RUN sleep 91                 \
        /opt/pyenv            \
  && cd /opt/pyenv            \
  && src/configure            \
- && make -C src              \
- && python3 -m pip install   \
-      --upgrade zlib
+ && make -C src
 # && mkdir /home/lfs/.pyenv   \
 # && tar cf -               . \
 # |  tar xf - --owner=lfs     \
