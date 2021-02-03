@@ -5,6 +5,8 @@ RUN sleep 91                 \
  && apt update               \
  && apt full-upgrade -y      \
  && apt install              \
+      libreadline-dev        \
+      libssl-dev             \
       python3-pip            \
       python3-setuptools     \
       python3-wheel          \
