@@ -18,8 +18,8 @@ RUN sleep 91               \
  && git clone --depth=1    \
       --recursive          \
       https://github.com/pyenv/pyenv.git \
-      ~/.pyenv             \
- && cd ~/.pyenv            \
+       /opt/pyenv          \
+ && cd /opt/pyenv          \
  && src/configure          \
  && make -C src
 COPY ./pyenv.sh /etc/profile.d/
