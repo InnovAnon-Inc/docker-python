@@ -30,4 +30,6 @@ RUN sleep 91                 \
  && chown -R lfs:lfs         \
          /home/lfs/.pyenv
 USER lfs
+RUN cd   /home/lfs/.pyenv/src/configure \
+ && make -C src
 
