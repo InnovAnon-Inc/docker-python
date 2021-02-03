@@ -29,8 +29,8 @@ RUN sleep 91                 \
       -C /home/lfs/.pyenv    \
  && chown -R lfs:lfs         \
          /home/lfs/.pyenv    \
- && /opt/pyenv/bin/pyenv --help \
- && /opt/pyenv/bin/pyenv global 3.9.1
+ && /opt/pyenv/bin/pyenv install 3.9.1 \
+ && /opt/pyenv/bin/pyenv global  3.9.1
 USER lfs
 #RUN cd   /home/lfs/.pyenv/src/configure \
 # && make -C src
