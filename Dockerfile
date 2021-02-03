@@ -18,7 +18,10 @@ RUN sleep 91               \
  && git clone --depth=1    \
       --recursive          \
       https://github.com/pyenv/pyenv.git \
-      ~/.pyenv
+      ~/.pyenv             \
+ && cd ~/.pyenv            \
+ && src/configure          \
+ && make -C src
 COPY ./pyenv.sh /etc/profile.d/
 USER lfs
 
