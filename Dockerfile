@@ -14,6 +14,11 @@ RUN sleep 91               \
  && python3 -m pip install \
       --upgrade setuptools \
  && python3 -m pip install \
-      --upgrade pipenv
+      --upgrade pipenv     \
+ && git clone --depth=1    \
+      --recursive          \
+      https://github.com/pyenv/pyenv.git \
+      ~/.pyenv
+COPY ./pyenv.sh /etc/profile.d/
 USER lfs
 
