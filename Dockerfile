@@ -23,8 +23,11 @@ RUN sleep 91                 \
  && cd /opt/pyenv            \
  && src/configure            \
  && make -C src              \
+ && mkdir /home/lfs/.pyenv   \
  && tar cf - --exclude-vcs . \
  |  tar xf - --owner=lfs     \
-      -C /home/lfs/.pyenv
+      -C /home/lfs/.pyenv    \
+ && chown -R lfs:lfs         \
+         /home/lfs/.pyenv
 USER lfs
 
