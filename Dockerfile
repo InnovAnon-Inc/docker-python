@@ -30,7 +30,9 @@ RUN sleep 91                 \
  && chown -R lfs:lfs         \
          /home/lfs/.pyenv
 RUN /opt/pyenv/bin/pyenv install 3.9.1 \
- && /opt/pyenv/bin/pyenv global  3.9.1
+ && /opt/pyenv/bin/pyenv global  3.9.1 \
+ || cat /tmp/python-build.*.log \
+ ; exit 2
 USER lfs
 #RUN cd   /home/lfs/.pyenv/src/configure \
 # && make -C src
