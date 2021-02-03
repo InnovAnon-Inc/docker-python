@@ -28,8 +28,9 @@ RUN sleep 91                 \
  |  tar xf - --owner=lfs     \
       -C /home/lfs/.pyenv    \
  && chown -R lfs:lfs         \
-         /home/lfs/.pyenv
+         /home/lfs/.pyenv    \
+ && pyenv global 3.9.1
 USER lfs
-RUN cd   /home/lfs/.pyenv/src/configure \
- && make -C src
+#RUN cd   /home/lfs/.pyenv/src/configure \
+# && make -C src
 
