@@ -5,6 +5,7 @@ RUN sleep 91               \
  && apt full-upgrade -y    \
  && apt install            \
       python3-pip          \
+      python3-pyenv        \
       python3-setuptools   \
       python3-wheel        \
  && python3 -m pip install \
@@ -13,8 +14,6 @@ RUN sleep 91               \
       --upgrade wheel      \
  && python3 -m pip install \
       --upgrade setuptools \
- && python3 -m pip install \
-      --upgrade pyenv      \
  && python3 -m pip install \
       --upgrade pipenv
 USER lfs
