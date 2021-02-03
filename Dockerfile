@@ -8,9 +8,14 @@ RUN sleep 91               \
       python3-setuptools   \
       python3-wheel        \
  && python3 -m pip install \
-      --upgrade pip wheel  \
-                setuptools \
-                pyenv      \
-                pipenv
+      --upgrade pip        \
+ && python3 -m pip install \
+      --upgrade wheel      \
+ && python3 -m pip install \
+      --upgrade setuptools \
+ && python3 -m pip install \
+      --upgrade pyenv      \
+ && python3 -m pip install \
+      --upgrade pipenv
 USER lfs
 
