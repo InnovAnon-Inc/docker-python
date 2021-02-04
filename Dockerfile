@@ -11,6 +11,7 @@ RUN sleep 91                 \
       python3-pip            \
       python3-setuptools     \
       python3-wheel          \
+      openssh-client         \
       zlib1g-dev             \
  && python3 -m pip install   \
       --upgrade pip          \
@@ -26,14 +27,8 @@ RUN sleep 91                 \
        /opt/pyenv            \
  && cd /opt/pyenv            \
  && src/configure            \
- && make -C src
-# && mkdir /home/lfs/.pyenv   \
-# && tar cf -               . \
-# |  tar xf - --owner=lfs     \
-#      -C /home/lfs/.pyenv    \
-# && chown -R lfs:lfs         \
-#         /home/lfs/.pyenv
-RUN /opt/pyenv/bin/pyenv install 3.9.1
+ && make -C src              \
+ && /opt/pyenv/bin/pyenv install 3.9.1
 RUN /opt/pyenv/bin/pyenv global  3.9.1
  #|| cat /tmp/python-build.*.log \
  #; exit 2
