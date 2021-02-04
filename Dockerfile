@@ -5,6 +5,7 @@ RUN sleep 91                 \
  && apt update               \
  && apt full-upgrade -y      \
  && apt install              \
+      libffi-dev             \
       libreadline-dev        \
       libssl-dev             \
       python3-pip            \
